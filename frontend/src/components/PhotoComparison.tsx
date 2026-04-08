@@ -165,8 +165,10 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
+                    aria-label="Previous photo"
+                    title="Previous photo"
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
@@ -174,8 +176,10 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
+                    aria-label="Next photo"
+                    title="Next photo"
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -213,8 +217,10 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
+                    aria-label="Previous photo"
+                    title="Previous photo"
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
@@ -222,8 +228,10 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
+                    aria-label="Next photo"
+                    title="Next photo"
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
