@@ -195,6 +195,7 @@ export const WeatherAlerts = ({ weather }: WeatherAlertsProps) => {
           size="sm"
           onClick={notificationsEnabled ? () => setNotificationsEnabled(false) : enableNotifications}
           className="h-8 px-2"
+          aria-label={notificationsEnabled ? "Disable weather alert notifications" : "Enable weather alert notifications"}
         >
           {notificationsEnabled ? (
             <>
@@ -236,8 +237,9 @@ export const WeatherAlerts = ({ weather }: WeatherAlertsProps) => {
                     size="icon"
                     className="h-6 w-6 -mr-2 -mt-1"
                     onClick={() => dismissAlert(alert.id)}
+                    aria-label={`Dismiss ${alert.title} alert`}
                   >
-                    <X className="h-4 w-4" />
+                    <X className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </AlertTitle>
                 <AlertDescription className="mt-1">
