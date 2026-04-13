@@ -1,0 +1,3 @@
+## 2024-04-13 - [Mobile Navigation] Accessible Slide-in Menu Implementation
+**Learning:** Mobile slide-in menus (`Sheet` or custom implementations like in `Navigation.tsx`) need explicit ID linking and state-bound ARIA attributes to be fully accessible to screen readers, especially when animated out-of-view using CSS transforms rather than being conditionally rendered.
+**Action:** When creating or modifying slide-in navigation, always bind `aria-expanded` to the boolean state (e.g., `isOpen`), link the trigger to the content container using `aria-controls` with a matching `id`, hide decorative icon SVG internals with `aria-hidden="true"`, and provide explicit, screen-reader-only labels like "Open menu" or "Close menu" if the buttons are icon-only.
