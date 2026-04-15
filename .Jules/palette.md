@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility attributes for responsive mobile menus
+**Learning:** Responsive slide-in menus implemented via conditional Tailwind transforms (e.g. `-translate-x-full`) often lack proper ARIA relationships connecting the trigger to the hidden panel. Adding `aria-expanded`, `aria-controls`, and structural IDs dramatically improves screen reader navigation while visual design remains identical.
+**Action:** Always link mobile menu toggles to their respective containers using `aria-controls` matching the container's `id`, and ensure focus states are clearly delineated (e.g., using `focus-visible:ring-2`) on transparent or icon-only buttons.
