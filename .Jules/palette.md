@@ -1,0 +1,3 @@
+## 2024-06-25 - Accessible icon buttons and keyboard navigation for hover overlays
+**Learning:** In this application, `<Button size="icon">` components frequently omit `aria-label` attributes, which creates an accessibility gap. Additionally, action buttons that are revealed on hover using `opacity-0 group-hover:opacity-100` are completely inaccessible to keyboard users because they cannot be seen when focused via Tab.
+**Action:** Always add an explicit `aria-label` to icon-only buttons. When implementing hover-revealed UI actions, ensure keyboard accessibility by appending `focus-within:opacity-100` to the container and `focus:opacity-100` to the interactive element itself so it appears during keyboard navigation.
