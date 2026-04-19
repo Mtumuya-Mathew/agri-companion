@@ -145,8 +145,9 @@ export const PermissionPrompt = () => {
             size="icon"
             className="absolute right-2 top-2"
             onClick={handleDismiss}
+            aria-label="Dismiss"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" aria-hidden="true" />
           </Button>
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 rounded-full bg-primary/10">
