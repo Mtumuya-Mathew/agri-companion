@@ -1,0 +1,3 @@
+## 2024-04-20 - Adding Tooltips to Authenticated Dashboard Components
+**Learning:** Bypassing Supabase authentication for Playwright UX verification requires careful handling of React state. Initializing a mock user in `useEffect` leaves the component briefly in a `null` state during the first render, leading to crashes if properties (like `user.email`) are accessed without optional chaining.
+**Action:** When using `VITE_VERIFY_UX` flags to mock auth, either initialize the mock user synchronously in the `useState` hook or ensure all user property access uses optional chaining (e.g., `user?.email`) to prevent initial render crashes.
