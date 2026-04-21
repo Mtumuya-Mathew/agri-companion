@@ -69,6 +69,7 @@ export const Navigation = () => {
           <button 
             onClick={() => setIsOpen(true)} 
             className="md:hidden p-2 rounded-lg hover:bg-muted transition"
+            aria-label="Open navigation menu"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -133,6 +134,7 @@ export const Navigation = () => {
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg hover:bg-muted"
+            aria-label="Close navigation menu"
           >
             <X className="w-6 h-6" />
           </button>
