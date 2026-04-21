@@ -95,7 +95,7 @@ const features = [
             {/* Mobile: Hamburger menu with theme toggle */}
             <Sheet>
               <SheetTrigger asChild className="sm:hidden">
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Toggle navigation menu">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
