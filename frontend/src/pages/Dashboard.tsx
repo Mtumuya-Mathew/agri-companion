@@ -15,6 +15,7 @@ import { WeatherData } from "@/types/farm";
 import { Button } from "@/components/ui/button";
 import { LogOut, Settings, Loader2 } from "lucide-react";
 import { getGrowthStage, getDaysSincePlanting } from "@/lib/gdu";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -119,20 +120,36 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => navigate("/settings")}
-              >
-                <Settings className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleSignOut}
-              >
-                <LogOut className="h-4 w-4" />
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => navigate("/settings")}
+                    aria-label="Settings"
+                  >
+                    <Settings className="h-4 w-4" aria-hidden="true" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Settings</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={handleSignOut}
+                    aria-label="Sign out"
+                  >
+                    <LogOut className="h-4 w-4" aria-hidden="true" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Sign out</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </div>
         </header>
