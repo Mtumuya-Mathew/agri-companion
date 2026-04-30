@@ -69,8 +69,11 @@ export const Navigation = () => {
           <button 
             onClick={() => setIsOpen(true)} 
             className="md:hidden p-2 rounded-lg hover:bg-muted transition"
+            aria-label="Open menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6" aria-hidden="true" />
           </button>
 
           {/* Desktop Navigation */}
@@ -121,6 +124,7 @@ export const Navigation = () => {
       {/* MOBILE SLIDE-IN MENU (LEFT → RIGHT) */}
       {/* ---------------------------------------------- */}
       <div
+        id="mobile-menu"
         className={cn(
           "fixed top-0 left-0 h-full w-64 bg-card shadow-xl border-r border-border z-50 md:hidden",
           "transform transition-transform duration-300",
@@ -133,8 +137,11 @@ export const Navigation = () => {
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg hover:bg-muted"
+            aria-label="Close menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 
