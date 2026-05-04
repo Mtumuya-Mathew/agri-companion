@@ -1,0 +1,3 @@
+## 2024-05-24 - Navigation menu toggle accessibility
+**Learning:** The mobile navigation slide-in menu uses a generic `button` without any ARIA attributes (`aria-expanded`, `aria-controls`, `aria-label`) which makes it hard for screen reader users to understand its state and purpose. Also, the close button inside the menu is missing an `aria-label`.
+**Action:** When implementing mobile slide-in menus, ensure the toggle button has `aria-expanded` reflecting the menu state, `aria-controls` pointing to the menu container's ID, and an `aria-label`. Ensure the close button inside the menu also has an `aria-label`.
