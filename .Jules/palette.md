@@ -1,0 +1,3 @@
+## 2024-05-15 - Missing Mobile Menu Accessiblity Bindings
+**Learning:** Custom slide-in mobile menus often miss crucial ARIA bindings (`aria-expanded` and `aria-controls`) linking the toggle button to the menu container, relying only on visual cues. Icon-only buttons also sometimes use `sr-only` spans instead of the preferred `aria-label` attribute directly on the interactive element.
+**Action:** When implementing or reviewing mobile menus and theme toggles, explicitly verify that `aria-expanded` accurately reflects state, `aria-controls` links to the container ID, and icon-only interactive elements use `aria-label` with `aria-hidden="true"` on inner SVGs.
