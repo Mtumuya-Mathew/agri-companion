@@ -1,0 +1,3 @@
+## 2024-05-13 - Mobile Menu Accessibility Pattern
+**Learning:** When implementing mobile slide-in menus (e.g., in Navigation components), it is essential to establish a clear relationship between the toggle button and the menu container using `aria-expanded` and `aria-controls` for screen reader users. Simply rendering the menu visually is insufficient. Decorative icons within icon-only buttons should also use `aria-hidden="true"` to reduce screen reader noise, relying instead on explicit `aria-label` attributes on the parent button.
+**Action:** Always check responsive navigation patterns for `aria-expanded` state tracking and `aria-controls` ID linking between hamburger triggers and mobile menu containers.
