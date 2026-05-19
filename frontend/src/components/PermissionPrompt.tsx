@@ -143,6 +143,7 @@ export const PermissionPrompt = () => {
           <Button
             variant="ghost"
             size="icon"
+            aria-label="Dismiss"
             className="absolute right-2 top-2"
             onClick={handleDismiss}
           >
