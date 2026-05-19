@@ -234,6 +234,7 @@ export const WeatherAlerts = ({ weather }: WeatherAlertsProps) => {
                   <Button
                     variant="ghost"
                     size="icon"
+                    aria-label="Dismiss alert"
                     className="h-6 w-6 -mr-2 -mt-1"
                     onClick={() => dismissAlert(alert.id)}
                   >
