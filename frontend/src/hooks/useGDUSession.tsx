@@ -341,6 +341,8 @@ export const useGDUSession = (userId: string | undefined) => {
       }
 
       let addedCount = 0;
+      const newRecords = [];
+
       for (const day of tempData) {
         if (day.tempMax !== null && day.tempMin !== null) {
           const gdu = calculateDailyGDU(day.tempMax, day.tempMin);
@@ -348,19 +350,28 @@ export const useGDUSession = (userId: string | undefined) => {
           // Check if record already exists
           const existing = dailyRecords.find(r => r.date === day.date);
           if (!existing) {
-            await supabase
-              .from("daily_gdu")
-              .insert({
-                session_id: session.id,
-                user_id: userId,
-                date: day.date,
-                temp_max: day.tempMax,
-                temp_min: day.tempMin,
-                gdu: gdu,
-                source: "api",
-              });
+            newRecords.push({
+              session_id: session.id,
+              user_id: userId,
+              date: day.date,
+              temp_max: day.tempMax,
+              temp_min: day.tempMin,
+              gdu: gdu,
+              source: "api",
+            });
             addedCount++;
           }
+        }
+      }
+
+      if (newRecords.length > 0) {
+        const { error } = await supabase
+          .from("daily_gdu")
+          .insert(newRecords);
+
+        if (error) {
+          console.error("Error bulk inserting GDU records:", error);
+          toast.error("Failed to insert some historical data");
         }
       }
 
