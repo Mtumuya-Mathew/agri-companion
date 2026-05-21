@@ -160,15 +160,16 @@ export const TaskNotes = ({ sessionId, userId, currentDay }: TaskNotesProps) => 
             {notes.map((note) => (
               <div
                 key={note.id}
-                className="p-3 bg-card border rounded-lg group"
+                className="p-3 bg-card border rounded-lg group focus-within:opacity-100"
               >
                 <div className="flex justify-between items-start gap-2">
                   <p className="text-sm whitespace-pre-wrap">{note.note}</p>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                    className="h-8 w-8 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity shrink-0"
                     onClick={() => handleDeleteNote(note.id)}
+                    aria-label="Delete note"
                   >
                     <Trash2 className="h-4 w-4 text-destructive" />
                   </Button>
