@@ -207,6 +207,7 @@ export const CropPhotoGallery = ({ userId, sessionId, currentDay }: CropPhotoGal
                   <Button
                     variant="destructive"
                     size="icon"
+                    aria-label="Delete photo"
                     className="absolute top-2 right-2 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
                     onClick={() => deleteMutation.mutate(photo)}
                   >
