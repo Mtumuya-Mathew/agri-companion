@@ -1,0 +1,3 @@
+## 2024-05-26 - Missing focus styles on interactive image navigation overlays
+**Learning:** `opacity-0 group-hover:opacity-100` on interactive element overlays (like image navigation buttons in `PhotoComparison.tsx`) makes them inaccessible to keyboard users because they only become visible on hover.
+**Action:** Always include `focus-within:opacity-100` on the parent container alongside `group-hover:opacity-100` so that when the child buttons receive focus via keyboard navigation, the entire overlay becomes visible. Also add `focus-visible:opacity-100` or `focus:opacity-100` directly on the focusable elements within the overlay, along with `aria-label` for screen readers.

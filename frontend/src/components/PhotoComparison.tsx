@@ -158,11 +158,12 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     {format(new Date(leftPhoto.created_at), "PPP")}
                   </p>
                 </div>
-                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Previous photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
                   >
@@ -171,7 +172,8 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Next photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
                   >
@@ -206,11 +208,12 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     {format(new Date(rightPhoto.created_at), "PPP")}
                   </p>
                 </div>
-                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Previous photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
                   >
@@ -219,7 +222,8 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Next photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
                   >
