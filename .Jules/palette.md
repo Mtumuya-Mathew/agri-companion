@@ -1,0 +1,3 @@
+## 2024-05-31 - Tooltips & ARIA Labels on Dashboard Header Buttons
+**Learning:** Icon-only buttons without context (like Settings and Log Out in the header) are common accessibility traps. Using Shadcn UI's Tooltip component combined with `aria-label` provides both visual context for mouse users and semantic meaning for screen readers.
+**Action:** When adding or updating icon-only buttons (`<Button size="icon">`), proactively check if they have tooltips and ARIA labels. The standard pattern should be wrapping the button with `<Tooltip>` -> `<TooltipTrigger asChild>` and ensuring `aria-label` is on the trigger.
