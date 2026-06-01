@@ -1,0 +1,3 @@
+## 2024-06-01 - [Add ARIA labels to icon-only buttons]
+**Learning:** Found multiple icon-only `Button` components across various files (`Index.tsx`, `Dashboard.tsx`, `TaskNotes.tsx`, `CropPhotoGallery.tsx`, `PhotoComparison.tsx`, `WeatherAlerts.tsx`, `ThemeToggle.tsx`) missing `aria-label` attributes. This is a common accessibility issue that needs systematic fixing across the app to ensure screen readers can announce the purpose of these buttons.
+**Action:** Will add descriptive `aria-label`s to these buttons for better accessibility. Will use `replace_with_git_merge_diff` to make the changes.
