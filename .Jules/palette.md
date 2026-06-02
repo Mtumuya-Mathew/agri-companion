@@ -1,0 +1,3 @@
+## 2024-06-03 - Hover-revealed Accessibility
+**Learning:** Found multiple instances where hover-revealed elements (like `opacity-0 group-hover:opacity-100`) lack keyboard accessibility. When actions like delete buttons are only revealed on hover, keyboard users cannot access or see them unless `focus-visible:opacity-100` and/or `group-focus-within:opacity-100` are added, along with a focus ring.
+**Action:** When implementing `group-hover:opacity-100`, always pair it with `group-focus-within:opacity-100` on the parent or `focus-visible:opacity-100` on the interactive element to ensure keyboard users can access the revealed actions.
