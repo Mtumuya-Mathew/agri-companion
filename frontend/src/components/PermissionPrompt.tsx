@@ -143,10 +143,11 @@ export const PermissionPrompt = () => {
           <Button
             variant="ghost"
             size="icon"
+            aria-label="Close permission prompt"
             className="absolute right-2 top-2"
             onClick={handleDismiss}
           >
-            <X className="h-4 w-4" />
+            <X aria-hidden="true" className="h-4 w-4" />
           </Button>
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 rounded-full bg-primary/10">
