@@ -1,0 +1,3 @@
+## 2025-06-07 - Add tooltips and ARIA attributes to navigation icons
+**Learning:** Icon-only navigation buttons in key flows (like Dashboard) need tooltips and explicit `aria-label` attributes to provide visual context and improve screen-reader accessibility, while nested SVGs require `aria-hidden='true'` to avoid redundant announcements. When fixing accessibility for shadcn UI components, using existing `Tooltip` components works effectively. Some existing files may have unresolved `any` typing errors in lint, but structural accessibility changes compile cleanly in `pnpm build`.
+**Action:** Always wrap functional icon-only buttons with tooltips for desktop visibility, bind `aria-label` to the interactive element, and append `aria-hidden` to decorative SVGs.
