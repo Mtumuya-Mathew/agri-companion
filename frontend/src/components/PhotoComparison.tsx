@@ -162,6 +162,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
+                    aria-label="Previous left photo"
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
@@ -171,6 +172,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
+                    aria-label="Next left photo"
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
@@ -210,6 +212,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
+                    aria-label="Previous right photo"
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
@@ -219,6 +222,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
+                    aria-label="Next right photo"
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
