@@ -169,6 +169,7 @@ export const TaskNotes = ({ sessionId, userId, currentDay }: TaskNotesProps) => 
                     size="icon"
                     className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
                     onClick={() => handleDeleteNote(note.id)}
+                    aria-label="Delete note"
                   >
                     <Trash2 className="h-4 w-4 text-destructive" />
                   </Button>
