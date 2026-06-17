@@ -1,0 +1,3 @@
+## 2025-01-01 - Accessible Hover-Revealed Buttons and Icon-Only Buttons
+**Learning:** When using `opacity-0 group-hover:opacity-100` to hide secondary actions like delete buttons until hovered, keyboard users cannot see the focused button without also adding `focus-visible:opacity-100` to the button and `focus-within:opacity-100` to its containing overlay. Additionally, shadcn/ui icon-only buttons (`size="icon"`) often lack proper ARIA labels by default.
+**Action:** Always ensure hover-revealed interactive elements include keyboard focus support via `focus-visible:opacity-100` and `focus-within:opacity-100`, and always add `aria-label` to icon-only buttons with `aria-hidden="true"` on the internal decorative SVGs.
