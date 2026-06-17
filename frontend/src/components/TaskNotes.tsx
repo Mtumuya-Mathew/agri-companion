@@ -167,10 +167,11 @@ export const TaskNotes = ({ sessionId, userId, currentDay }: TaskNotesProps) => 
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                    className="h-8 w-8 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity shrink-0"
                     onClick={() => handleDeleteNote(note.id)}
+                    aria-label="Delete note"
                   >
-                    <Trash2 className="h-4 w-4 text-destructive" />
+                    <Trash2 className="h-4 w-4 text-destructive" aria-hidden="true" />
                   </Button>
                 </div>
                 <div className="flex items-center gap-1 mt-2 text-xs text-muted-foreground">
