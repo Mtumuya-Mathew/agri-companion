@@ -122,16 +122,18 @@ const Dashboard = () => {
               <Button
                 variant="outline"
                 size="icon"
+                aria-label="Settings"
                 onClick={() => navigate("/settings")}
               >
-                <Settings className="h-4 w-4" />
+                <Settings className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
+                aria-label="Sign Out"
                 onClick={handleSignOut}
               >
-                <LogOut className="h-4 w-4" />
+                <LogOut className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
           </div>

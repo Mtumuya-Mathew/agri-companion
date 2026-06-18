@@ -181,7 +181,7 @@ export const CropPhotoGallery = ({ userId, sessionId, currentDay }: CropPhotoGal
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {photos.map((photo) => (
-              <div key={photo.id} className="relative group">
+              <div key={photo.id} className="relative group focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 rounded-lg">
                 <div className="aspect-square rounded-lg overflow-hidden bg-muted">
                   <img
                     src={photo.image_url}
@@ -207,10 +207,11 @@ export const CropPhotoGallery = ({ userId, sessionId, currentDay }: CropPhotoGal
                   <Button
                     variant="destructive"
                     size="icon"
-                    className="absolute top-2 right-2 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
+                    aria-label="Delete photo"
+                    className="absolute top-2 right-2 h-7 w-7 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity"
                     onClick={() => deleteMutation.mutate(photo)}
                   >
-                    <Trash2 className="h-3 w-3" />
+                    <Trash2 className="h-3 w-3" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
