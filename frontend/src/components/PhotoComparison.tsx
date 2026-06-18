@@ -141,7 +141,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
           {/* Left Photo */}
           <div className="space-y-2">
             {leftPhoto ? (
-              <div className="relative group">
+              <div className="relative group focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 rounded-lg">
                 <div className="aspect-square rounded-lg overflow-hidden bg-muted border-2 border-primary/20">
                   <img
                     src={leftPhoto.image_url}
@@ -162,20 +162,22 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Previous photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Next photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -189,7 +191,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
           {/* Right Photo */}
           <div className="space-y-2">
             {rightPhoto ? (
-              <div className="relative group">
+              <div className="relative group focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 rounded-lg">
                 <div className="aspect-square rounded-lg overflow-hidden bg-muted border-2 border-accent/20">
                   <img
                     src={rightPhoto.image_url}
@@ -210,20 +212,22 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Previous photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    aria-label="Next photo"
+                    className="h-8 w-8 focus-visible:opacity-100"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
