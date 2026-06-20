@@ -165,6 +165,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
+                    aria-label="Previous left photo"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
@@ -174,6 +175,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
+                    aria-label="Next left photo"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </Button>
@@ -213,6 +215,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
+                    aria-label="Previous right photo"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
@@ -222,6 +225,7 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     className="h-8 w-8"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
+                    aria-label="Next right photo"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </Button>
