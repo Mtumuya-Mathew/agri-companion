@@ -1,0 +1,3 @@
+## 2024-06-23 - Accessibility: Missing ARIA Labels on Icon Buttons
+**Learning:** The codebase heavily uses Shadcn UI's `<Button size="icon">` pattern for icon-only buttons, but frequently omits the `aria-label` attribute, relying solely on visual context or nested `sr-only` spans. This pattern appears in multiple core components like `WeatherAlerts`, `CropPhotoGallery`, `PhotoComparison`, and `PermissionPrompt`.
+**Action:** Always verify that `aria-label` is directly present on icon-only buttons instead of relying on `sr-only` or surrounding context, ensuring screen readers announce the button's action clearly.
