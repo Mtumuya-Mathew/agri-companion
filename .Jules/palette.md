@@ -1,0 +1,3 @@
+## 2024-07-03 - Mobile Menu Accessibility Enhancements
+**Learning:** Adding `aria-expanded` and `aria-controls` to the mobile hamburger button, paired with an `id` on the menu container, creates a critical semantic linkage for screen readers, allowing users to understand the state and relationship of the slide-in menu. Focus-visible styles are also crucial to prevent visual confusion during keyboard navigation of custom UI elements.
+**Action:** Always ensure that any custom toggle buttons (like mobile hamburger menus or dropdowns) include `aria-expanded` reflecting the state, `aria-controls` linking to the target container's `id`, and explicitly define `focus-visible` styles if default browser outlines are suppressed or insufficient.
