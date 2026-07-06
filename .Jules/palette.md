@@ -1,0 +1,3 @@
+## 2024-05-18 - Direct ARIA labels for icon buttons
+**Learning:** Using `aria-label` directly on interactive buttons instead of `sr-only` spans provides more consistent screen reader announcements for icon-only buttons like the Theme Toggle. Additionally, native HTML interactive elements require manual mapping of state via `aria-expanded` and `aria-controls`, and adding `focus-visible:ring-2` ensures keyboard accessibility is preserved, which is critical for mobile navigation menus.
+**Action:** Always prefer `aria-label` on the element itself, add `aria-hidden="true"` to decorative inner SVGs, and explicitly manage ARIA states and focus rings for raw interactive elements.
