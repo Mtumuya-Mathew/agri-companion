@@ -69,8 +69,9 @@ export const Navigation = () => {
           <button 
             onClick={() => setIsOpen(true)} 
             className="md:hidden p-2 rounded-lg hover:bg-muted transition"
+            aria-label="Open menu"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6" aria-hidden="true" />
           </button>
 
           {/* Desktop Navigation */}
@@ -133,8 +134,9 @@ export const Navigation = () => {
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg hover:bg-muted"
+            aria-label="Close menu"
           >
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 
