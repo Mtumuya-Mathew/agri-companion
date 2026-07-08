@@ -1,0 +1,3 @@
+## 2024-11-23 - Icon-Only Button Accessibility in Mobile Navigation
+**Learning:** Custom interactive elements like custom slide-in menus often miss structural ARIA attributes. Icon-only toggle buttons specifically require `aria-expanded`, `aria-controls` referencing a concrete container `id`, `aria-label`, and `focus-visible` utilities to provide equivalent experience to native implementations like `dialog` or shadcn `Sheet`.
+**Action:** When auditing custom slide-in navigation, verify the trigger button has `aria-controls` linked to the menu container's `id`, `aria-expanded` state, `aria-label` for the icon, and visible focus states for keyboard users.
