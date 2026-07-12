@@ -68,9 +68,12 @@ export const Navigation = () => {
           {/* Mobile Hamburger */}
           <button 
             onClick={() => setIsOpen(true)} 
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition"
+            className="md:hidden p-2 rounded-lg hover:bg-muted transition focus-visible:ring-2 focus-visible:outline-none"
+            aria-label="Open menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6" aria-hidden="true" />
           </button>
 
           {/* Desktop Navigation */}
@@ -121,6 +124,10 @@ export const Navigation = () => {
       {/* MOBILE SLIDE-IN MENU (LEFT → RIGHT) */}
       {/* ---------------------------------------------- */}
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-menu-title"
         className={cn(
           "fixed top-0 left-0 h-full w-64 bg-card shadow-xl border-r border-border z-50 md:hidden",
           "transform transition-transform duration-300",
@@ -129,12 +136,13 @@ export const Navigation = () => {
       >
         {/* Close Button */}
         <div className="flex items-center justify-between py-4 px-4 border-b border-border">
-          <h2 className="text-lg font-semibold">Menu</h2>
+          <h2 id="mobile-menu-title" className="text-lg font-semibold">Menu</h2>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg hover:bg-muted"
+            className="p-2 rounded-lg hover:bg-muted focus-visible:ring-2 focus-visible:outline-none"
+            aria-label="Close menu"
           >
-            <X className="w-6 h-6" />
+            <X className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
 

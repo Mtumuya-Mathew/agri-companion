@@ -1,0 +1,3 @@
+## 2026-05-18 - Manual Mobile Menu Navigation Needs ARIA Mapping
+**Learning:** Found that some responsive implementations use standard HTML `<button>` and `<div>` overlays (like in `Navigation.tsx`), bypassing shadcn's built-in a11y provided by `Sheet`. These manual implementations lack critical screen-reader properties (`aria-expanded`, `aria-controls`, `role="dialog"`) and keyboard focus rings.
+**Action:** Always verify if responsive mobile menus use raw HTML versus Radix/shadcn UI, and manually map ARIA attributes and focus-visible utilities to manual toggle buttons and overlays to ensure consistent accessibility.
