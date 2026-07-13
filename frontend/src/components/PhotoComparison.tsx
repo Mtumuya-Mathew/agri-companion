@@ -158,24 +158,26 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     {format(new Date(leftPhoto.created_at), "PPP")}
                   </p>
                 </div>
-                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    className="h-8 w-8 focus-visible:opacity-100 focus-visible:ring-2"
                     onClick={() => navigatePhoto("left", "prev")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === 0}
+                    aria-label="Previous before photo"
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    className="h-8 w-8 focus-visible:opacity-100 focus-visible:ring-2"
                     onClick={() => navigatePhoto("left", "next")}
                     disabled={photos.findIndex((p) => p.id === leftPhotoId) === photos.length - 1}
+                    aria-label="Next before photo"
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -206,24 +208,26 @@ export const PhotoComparison = ({ sessionId }: PhotoComparisonProps) => {
                     {format(new Date(rightPhoto.created_at), "PPP")}
                   </p>
                 </div>
-                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 flex justify-between opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    className="h-8 w-8 focus-visible:opacity-100 focus-visible:ring-2"
                     onClick={() => navigatePhoto("right", "prev")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === 0}
+                    aria-label="Previous after photo"
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="h-8 w-8"
+                    className="h-8 w-8 focus-visible:opacity-100 focus-visible:ring-2"
                     onClick={() => navigatePhoto("right", "next")}
                     disabled={photos.findIndex((p) => p.id === rightPhotoId) === photos.length - 1}
+                    aria-label="Next after photo"
                   >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>

@@ -1,0 +1,3 @@
+## 2024-07-13 - Keyboard Accessibility for Hover-Revealed Actions
+**Learning:** Components that reveal action buttons on hover (using `opacity-0 group-hover:opacity-100`) are invisible to keyboard-only users who navigate via Tab. These buttons must also become visible when focused or when their parent container contains focus.
+**Action:** Always add `focus-visible:opacity-100` to the hidden interactive element, and optionally `group-focus-within:opacity-100` to the parent container, to ensure keyboard accessibility. Ensure icon-only buttons have `aria-label` and `aria-hidden="true"` on the SVG.
