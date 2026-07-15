@@ -1,0 +1,3 @@
+## 2024-03-24 - Accessibility for Mobile Menus
+**Learning:** Icon-only navigation toggle buttons (like mobile hamburger menus) often lack `aria-label`s, `aria-expanded`/`aria-controls` states, and proper keyboard focus rings. While component libraries like Radix handle states on `SheetTrigger`, raw HTML buttons need manual ARIA states and an explicitly linked `id` on their target menu container.
+**Action:** When auditing navigation, always check that icon-only toggle buttons have `aria-label`s, appropriate ARIA states if raw HTML, and keyboard focus styles (`focus-visible:ring-2 focus-visible:outline-none`). Add `aria-hidden="true"` to their internal SVGs to prevent redundant screen reader announcements.
