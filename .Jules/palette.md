@@ -1,0 +1,3 @@
+## 2024-07-16 - Make hover-revealed delete buttons keyboard accessible
+**Learning:** In this application, hover-revealed actions (like deleting notes or photos) using `opacity-0 group-hover:opacity-100` are completely invisible to keyboard-only users because they lack `focus-visible:opacity-100`. Additionally, they frequently lack `aria-label`s since they rely entirely on icons.
+**Action:** Always pair `group-hover:opacity-100` with `focus-visible:opacity-100` on the interactive element and `focus-within:ring-2` on the container, and provide explicit `aria-label`s on icon-only buttons to ensure they remain accessible to keyboard and screen reader users.
